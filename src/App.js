@@ -2,6 +2,7 @@ import React from 'react';
 import CardList from './CardList';
 import SearchBox from './SearchBox';
 import {robots} from './robots.js';
+import './App.css'
 
 class App extends React.Component {
   constructor() {
@@ -14,8 +15,8 @@ class App extends React.Component {
 
   /*The onChange handler in the SearchBox.js receives the 
      value and then passes it to the onSearchChange function
-     through the searchChange prop.
-     Every time we type a new input in the searchbox
+     through the searchChange property.
+     Every time I type a new input in the searchbox
      I get a new 'event' and the searchfield state is updated.
      IMPORTANT NOTE: setState updates the state object AND
      re-renders the component automatically.*/
@@ -31,7 +32,7 @@ class App extends React.Component {
     parameter I can pass the filteredRobots which contains only the
     robots I want.*/
   render() { 
-    const filteredRobots = this.state.robots.filter(robot =>{
+    const filteredRobots = this.state.robots.filter(robot => {
       return robot.name.toLowerCase().includes(this.state.searchfield.toLowerCase())
     });
     return (
